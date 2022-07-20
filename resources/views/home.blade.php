@@ -1,24 +1,27 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>Secret Message</title>
     <!-- Box Icons -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    @vite('resources/css/app.css')
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     @livewireStyles
+    @vite('resources/css/app.css')
 </head>
+<script src="//unpkg.com/alpinejs" defer></script>
 
 <body>
 
     <div class="main">
         @livewire('side-bar')
-        @livewire('message')
         @livewire('content')
     </div>
 
-
-
-    @vite('resources/js/app.js')
     @livewireScripts
+    <wireui:scripts />
 
 </html>

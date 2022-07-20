@@ -1,5 +1,6 @@
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
     --main-text-color: #086047;
@@ -23,25 +24,15 @@
     width: 100%;
     background-color: #fff;
     display: flex;
-    justify-content: space-around;
-}
-
-.message {
-    border: 3px solid #086047;
-    height: 100vh;
-    padding: 0 1rem;
-    width: 30%;
 }
 
 .content {
-    border: 3px solid #086047;
     height: 100vh;
     padding: 0 1rem;
-    width: 50%;
+    width: 80%;
 }
 
 .side-navbar {
-    border: 3px solid #086047;
     padding: 0 1rem;
     height: 100vh;
     width: 20%;
@@ -50,22 +41,23 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.04);
     transition: 0.5s ease;
 }
-.side-navbar ul {
-    top: 0;
-    left: 0;
+.side-navbar-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 100%;
 }
-.side-navbar ul li {
+.side-navbar-items li {
     border-radius: 3rem;
     width: 100%;
 }
-.side-navbar ul li:hover {
+.side-navbar-items li:hover {
     background: var(--sidebar-item-bg-color);
     --sidebar-text-color: #fff;
     --sidebar-icon-color: #fff;
 }
 
-.side-navbar ul li a {
+.side-navbar-items li a {
     display: flex;
     align-items: center;
     width: 100%;
@@ -98,7 +90,7 @@
     white-space: nowrap;
 }
 
-.side-navbar ul li a .icon {
+.side-navbar-items li a .icon {
     min-width: 60px;
     display: block;
     font-size: 25px;
@@ -107,7 +99,7 @@
     color: var(--sidebar-icon-color);
 }
 
-.side-navbar ul li a .text {
+.side-navbar-items li a .text {
     display: block;
     padding: 0 10px;
     line-height: 60px;
@@ -118,6 +110,49 @@
 .side-navbar.active {
     width: 60px;
 }
+
+.message-secret-btn {
+    width: 10rem;
+    height: 10rem;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 10px;
+    border-radius: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.message-secret-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+}
+
+.message-secret-btn:active {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.content-message-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    row-gap: calc(2rem);
+
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.image-secret {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 2rem;
+    background-color: transparent;
+    border: none;
+
+    padding: 1rem;
+}
+
+.is-read {
+    filter: grayscale(100%);
+}
+
 @media (max-width: 768px) {
     .side-navbar {
         width: 60px;

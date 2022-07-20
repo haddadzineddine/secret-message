@@ -10,4 +10,9 @@ class Content extends Component
     {
         return view('livewire.content');
     }
+
+    public function openMessage()
+    {
+        $this->openModal('simpleModal');
+    }
 }

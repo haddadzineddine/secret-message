@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class Message extends Component
 {
