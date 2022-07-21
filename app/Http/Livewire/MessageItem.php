@@ -10,4 +10,13 @@ class MessageItem extends Component
     {
         return view('livewire.message-item');
     }
+
+    public function showSecretMessage($content='bla bla bla')
+    {
+        $this->dispatchBrowserEvent('swal:modal', [
+                'type' => 'success',
+                'message' => '🔥  You received a message ',
+                'text' => $content ,
+            ]);
+    }
 }

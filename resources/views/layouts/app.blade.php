@@ -16,12 +16,10 @@
 
 <body>
 
-    <div class="main">
-        @livewire('side-bar')
-        @livewire('content')
-    </div>
+    @yield('content')
+
 
     @livewireScripts
-    <wireui:scripts />
+    @vite('resources/js/app.js')
 
-</html>
+</html
