@@ -1,5 +1,6 @@
 <?php
-namespace App\traits;
+
+namespace App\Traits;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Cookie;
@@ -16,7 +17,4 @@ trait UserInfo
 
         return User::where('username', $username)->first();
     }
-}
-{
-
 }

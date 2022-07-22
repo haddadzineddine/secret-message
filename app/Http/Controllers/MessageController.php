@@ -11,7 +11,7 @@ class MessageController extends Controller
     {
         $user = User::where('username', $user_name)->first();
 
-        if (!$user) {
+        if (! $user) {
             abort(404);
         }
 

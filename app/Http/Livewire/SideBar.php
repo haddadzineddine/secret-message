@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Traits\UserInfo;
 use Livewire\Component;
-use App\traits\UserInfo;
 
 class SideBar extends Component
 {
@@ -14,7 +14,7 @@ class SideBar extends Component
     public $tabs = [
         'dashboard' => 'Dashboard',
     ];
-    
+
     public function render()
     {
         if ($this->getUserInfo()) {
@@ -36,5 +36,4 @@ class SideBar extends Component
     {
         return $this->activeTab === $tab;
     }
-    
 }

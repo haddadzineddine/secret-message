@@ -3,21 +3,20 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
-use Livewire\Livewire;
-use Livewire\Component;
-use App\traits\UserInfo;
-use Livewire\WithFileUploads;
+use App\Traits\UserInfo;
 use Illuminate\Support\Facades\Cookie;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Dashboard extends Component
 {
     use WithFileUploads, UserInfo;
 
     public $username;
+
     public $image;
 
     public $link;
-
 
     public function render()
     {
@@ -45,6 +44,7 @@ class Dashboard extends Component
         $this->link = $user->link;
 
         Cookie::queue('username', $user->username);
+
         return redirect()->to('/');
     }
 
@@ -55,10 +55,10 @@ class Dashboard extends Component
         ]);
     }
 
-
     public function logout()
     {
         Cookie::queue(Cookie::forget('username'));
+
         return redirect()->to('/');
     }
 }

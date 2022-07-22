@@ -12,12 +12,12 @@ class Inbox extends Component
     public $readyToLoad = false;
 
     public $user;
- 
+
     public function loadMessages()
     {
         $this->readyToLoad = true;
     }
-       
+
     public function render()
     {
         return view('livewire.inbox', [

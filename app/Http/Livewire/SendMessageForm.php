@@ -8,13 +8,13 @@ use Livewire\Component;
 class SendMessageForm extends Component
 {
     public $message;
+
     public $user;
 
     public function render()
     {
         return view('livewire.send-message-form');
     }
-
 
     public function sendMessage()
     {

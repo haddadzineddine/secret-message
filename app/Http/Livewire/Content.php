@@ -6,9 +6,9 @@ use Livewire\Component;
 
 class Content extends Component
 {
-    public $activeTab ;
+    public $activeTab;
 
-    protected $listeners  = ['change-tab' => 'changeTab'];
+    protected $listeners = ['change-tab' => 'changeTab'];
 
     public function render()
     {
@@ -17,6 +17,6 @@ class Content extends Component
 
     public function changeTab($tab)
     {
-        $this->activeTab = $tab ;
+        $this->activeTab = $tab;
     }
 }
