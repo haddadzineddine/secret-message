@@ -2,16 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Cookie;
 use Livewire\Component;
 
 class Home extends Component
 {
-    public $tabs = [
-        'dashboard' => 'Dashboard',
-        'inbox' => 'Inbox',
-    ];
 
-    public $activeTab = 'inbox';
+    public $activeTab = 'dashboard';
 
     public function render()
     {
