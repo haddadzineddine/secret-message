@@ -1,4 +1,4 @@
-<div class="w-9/12 p-6 ">
+<div class="w-9/12">
     @if ($activeTab == 'inbox')
         @livewire('inbox')
     @else

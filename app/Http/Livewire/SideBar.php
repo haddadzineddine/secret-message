@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Livewire\Livewire;
 
 class SideBar extends Component
 {
@@ -15,15 +16,12 @@ class SideBar extends Component
 
     public function selectTab($tab)
     {
-        $this->emit('select-tab', $tab);
+        $this->emit('change-tab', $tab);
+        $this->activeTab = $tab;
     }
 
     public function isActive($tab)
     {
-        if ($this->activeTab === $tab) {
-            return "bg-green-600 text-white";
-        }
-
-        return "hover:bg-green-600 hover:text-white text-gray-500";
+        return $this->activeTab === $tab;
     }
 }

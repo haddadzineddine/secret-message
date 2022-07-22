@@ -2,21 +2,38 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Message;
 use Livewire\Component;
 
 class MessageItem extends Component
 {
+    public $message;
+
+    protected function getListeners()
+    {
+        return ['message'. $this->message->id .'-is-read' => 'isRead'];
+    }
+
     public function render()
     {
         return view('livewire.message-item');
     }
 
-    public function showSecretMessage($content='bla bla bla')
+    public function showSecretMessage()
     {
         $this->dispatchBrowserEvent('swal:modal', [
-                'type' => 'success',
-                'message' => '🔥  You received a message ',
-                'text' => $content ,
+                'message' => $this->message->message ,
+                'id' => $this->message->id,
             ]);
+    }
+
+    public function isRead()
+    {
+        if ($this->message->is_read) {
+            return;
+        }
+        
+        $this->message->is_read = true;
+        $this->message->save();
     }
 }

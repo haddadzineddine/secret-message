@@ -13,12 +13,11 @@ class Inbox extends Component
     {
         $this->readyToLoad = true;
     }
-    
-    
+       
     public function render()
     {
         return view('livewire.inbox', [
-            'messages' => $this->readyToLoad ? Message::all() : [],
+            'messages' => $this->readyToLoad ? Message::latest()->get() : [],
         ]);
     }
 }

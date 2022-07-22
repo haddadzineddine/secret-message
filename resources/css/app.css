@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .active-btn {
+        @apply bg-green-600 text-white;
+    }
+
+    .btn {
+        @apply hover:bg-green-600 hover:text-white text-gray-500;
+    }
+}
 .message {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
     row-gap: calc(2rem);
 }
 
-.is-read {
+.is-not-read {
     filter: grayscale(100%);
 }

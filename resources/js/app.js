@@ -1,9 +1,6 @@
 import Swal from "sweetalert2";
 
 window.addEventListener("swal:modal", (event) => {
-    Swal.fire({
-        title: event.detail.message,
-        text: event.detail.text,
-        icon: event.detail.type,
-    });
+    Swal.fire("Here's your message !", event.detail.message, "info");
+    Livewire.emit("message" + event.detail.id + "-is-read");
 });
