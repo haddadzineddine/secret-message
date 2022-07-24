@@ -20,7 +20,7 @@ class MessageItem extends Component
 
     public function showSecretMessage()
     {
-        $this->dispatchBrowserEvent('swal:modal', [
+        $this->dispatchBrowserEvent('show-message', [
             'message' => $this->message->message,
             'id' => $this->message->id,
         ]);

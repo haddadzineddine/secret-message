@@ -25,7 +25,7 @@ class Dashboard extends Component
 
     public function showUploadImage()
     {
-        $this->dispatchBrowserEvent('showUploadImage');
+        $this->dispatchBrowserEvent('show-upload-image');
     }
 
     public function saveUser()
@@ -50,7 +50,7 @@ class Dashboard extends Component
 
     public function copyToClipboard()
     {
-        $this->dispatchBrowserEvent('copyToClipboard', [
+        $this->dispatchBrowserEvent('copy-to-clipboard', [
             'link' => $this->link ?? $this->getUserInfo()->link,
         ]);
     }

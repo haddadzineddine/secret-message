@@ -3,13 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Message;
+use App\Traits\UserInfo;
 use Livewire\Component;
 
 class SendMessageForm extends Component
 {
-    public $message;
+    use UserInfo;
 
-    public $user;
+    public $message;
 
     public function render()
     {
@@ -24,7 +25,7 @@ class SendMessageForm extends Component
 
         Message::create([
             'message' => $this->message,
-            'user_id' => $this->user->id,
+            'user_id' => $this->getUserInfo()->id,
         ]);
 
         $this->message = '';

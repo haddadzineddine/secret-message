@@ -1,16 +1,16 @@
 import Swal from "sweetalert2";
 
-window.addEventListener("swal:modal", (event) => {
+window.addEventListener("show-message", (event) => {
     Swal.fire("Here's your message !", event.detail.message, "info");
     Livewire.emit("message" + event.detail.id + "-is-read");
 });
 
-window.addEventListener("showUploadImage", () => {
+window.addEventListener("show-upload-image", () => {
     const inputUpload = document.querySelector("#upload-image");
     inputUpload.click();
 });
 
-window.addEventListener("copyToClipboard", (event) => {
+window.addEventListener("copy-to-clipboard", (event) => {
     const link = event.detail.link;
 
     if (navigator.clipboard) {

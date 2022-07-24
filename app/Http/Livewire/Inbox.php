@@ -3,15 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Message;
-use App\Models\User;
-use Illuminate\Support\Facades\Cookie;
+use App\Traits\UserInfo;
 use Livewire\Component;
 
 class Inbox extends Component
 {
-    public $readyToLoad = false;
+    use UserInfo;
 
-    public $user;
+    public $readyToLoad = false;
 
     public function loadMessages()
     {
@@ -21,13 +20,10 @@ class Inbox extends Component
     public function render()
     {
         return view('livewire.inbox', [
-            'messages' => $this->readyToLoad ? Message::where('user_id', $this->user->id)->latest()->get() : [],
+            'messages' => $this->readyToLoad ? Message::where('user_id', $this->getUserInfo()->id)
+                ->latest()
+                ->get()
+            : [],
         ]);
-    }
-
-    public function mount()
-    {
-        $username = Cookie::get('username');
-        $this->user = User::where('username', $username)->first();
     }
 }
