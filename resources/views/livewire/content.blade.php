@@ -1,7 +1,13 @@
-<div class="w-9/12">
+<div>
     @if ($activeTab == 'inbox')
         @livewire('inbox')
-    @else
+    @endif
+
+    @if ($activeTab == 'dashboard')
         @livewire('dashboard')
+    @endif
+
+    @if ($activeTab == 'home')
+        @livewire('secret')
     @endif
 </div>

@@ -2,16 +2,17 @@
 
 namespace App\Http\Livewire;
 
-use App\Traits\UserInfo;
 use Livewire\Component;
+use App\Traits\UserInfo;
 
-class SideBar extends Component
+class NavBar extends Component
 {
     use UserInfo;
 
     public $activeTab;
 
     public $tabs = [
+        'home' => 'Home',
         'dashboard' => 'Dashboard',
     ];
 
@@ -21,7 +22,7 @@ class SideBar extends Component
             $this->tabs['inbox'] = 'Inbox';
         }
 
-        return view('livewire.side-bar');
+        return view('livewire.nav-bar');
     }
 
     public function selectTab($tab)
