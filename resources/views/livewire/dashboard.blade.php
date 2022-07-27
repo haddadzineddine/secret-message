@@ -21,9 +21,8 @@
 
 
             @if ($this->getUserInfo())
-                <img class="w-64 h-64 p-2 rounded-full absolute"
-                    src="{{ $this->getUserInfo()->image ? url('storage/' . $this->getUserInfo()->image) : asset('/images/user.png') }}"
-                    alt="" />
+                <img class="w-64 h-64 p-2 rounded-full absolute" {{-- src="{{ $this->getUserInfo()->image ? url('storage/' . $this->getUserInfo()->image) : asset('/images/user.png') }}" --}}
+                    src="{{ asset('/images/user.png') }}" alt="" />
             @else
                 <img class="w-64 h-64 p-2 rounded-full absolute"
                     src="{{ $image ? $image->temporaryUrl() : asset('/images/user.png') }}" alt="" />
@@ -69,11 +68,11 @@
 
     @if ($link || $this->getUserInfo())
         <div class="flex justify-center  mt-24">
-            <div class="flex  p-3 rounded-lg bg-slate-100 justify-between w-4/6 opacity-90">
+            <div class="flex  p-3 rounded-lg bg-slate-100 justify-between space-x-4  opacity-90">
 
-                <div>{{ $link ?? $this->getUserInfo()->link }}</div>
+                <div class="text-xs">{{ $link ?? $this->getUserInfo()->link }}http://127.0.0.1:8000/dashboard</div>
 
-                <button wire:click="copyToClipboard" class="flex space-x-2">
+                <button wire:click="copyToClipboard" class="flex space-x-2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"

@@ -10,8 +10,7 @@
 
 
     <div class="w-64 h-64">
-        <img class="w-64 h-64 rounded-full absolute"
-            src="{{ $user->image ? url('storage/' . $user->image) : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+        <img class="w-64 h-64 rounded-full absolute" src="{{ asset('/images/user.png') }} " {{-- src="{{ $user->image ? url('storage/' . $user->image) : asset('/images/user.png') }}" --}}
             alt="" />
 
     </div>
