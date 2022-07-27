@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import 'flowbite';
 import "../css/app.css";
 
 window.addEventListener("show-message", (event) => {
