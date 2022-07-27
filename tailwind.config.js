@@ -5,7 +5,11 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                main: "#090979",
+            },
+        },
     },
     plugins: [require("flowbite/plugin")],
 };

@@ -11,19 +11,26 @@
         @apply hover:bg-green-600 text-white;
     }
 }
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 0%,
+        rgba(9, 15, 125, 1) 0%,
+        rgba(0, 212, 255, 1) 100%
+    );
+}
+
 .message {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
     row-gap: calc(2rem);
 }
 
-.is-not-read {
+.is-read {
     filter: grayscale(100%);
-}
-
-body {
-    background: #6ae4a8;
-    background: linear-gradient(90deg, #6ae4a8 0%, rgba(61, 187, 130, 1) 100%);
 }
 
 .box {

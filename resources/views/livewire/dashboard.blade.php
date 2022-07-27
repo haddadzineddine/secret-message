@@ -1,21 +1,19 @@
 <div class="p-6">
-    <div class="flex items-start space-x-2" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20" fill="currentColor">
-            <path
-                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-        </svg>
-        <span class="text-3xl font-bold text-white"> Dashboard </span>
-    </div>
-    <div class="my-6">
-        @error('image')
-            <span class="text-red-500 text-sm">* {{ $message }}</span>
-        @enderror
 
-        @error('username')
-            <span class="text-red-500 text-sm">* {{ $message }}</span>
-        @enderror
 
-    </div>
+    @error('image')
+        <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+            <span class="font-medium"> {{ $message }}</span>
+        </div>
+    @enderror
+
+    @error('username')
+        <div class="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200 dark:text-red-800" role="alert">
+            <span class="font-medium">{{ $message }}</span>
+        </div>
+    @enderror
+
+
 
 
     <form wire:submit.prevent="saveUser" class="mt-16 flex flex-col justify-center items-center">
@@ -23,17 +21,12 @@
 
 
             @if ($this->getUserInfo())
-                <img class="w-64 h-64 rounded-full absolute"
-                    src="{{ $this->getUserInfo()->image
-                        ? url('storage/' . $this->getUserInfo()->image)
-                        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+                <img class="w-64 h-64 p-2 rounded-full absolute"
+                    src="{{ $this->getUserInfo()->image ? url('storage/' . $this->getUserInfo()->image) : asset('/images/user.png') }}"
                     alt="" />
             @else
-                <img class="w-64 h-64 rounded-full absolute"
-                    src="{{ $image
-                        ? $image->temporaryUrl()
-                        : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
-                    alt="" />
+                <img class="w-64 h-64 p-2 rounded-full absolute"
+                    src="{{ $image ? $image->temporaryUrl() : asset('/images/user.png') }}" alt="" />
                 <div
                     class="w-64 h-64 group hover:bg-gray-200 opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
                     <button type="button" wire:click="showUploadImage">
@@ -52,7 +45,7 @@
             <h2 class="mt-8 font-semibold text-white text-xl">{{ $this->getUserInfo()->username }}</h2>
 
             <button wire:click="logout"
-                class="flex justify-between space-x-4 bg-red-600 text-white mt-16 w-60 hover:bg-white hover:text-red-600  py-2 px-4 rounded-md">
+                class="flex justify-between space-x-4 bg-red-500 text-white mt-16 w-60 hover:bg-white hover:text-red-600  py-2 px-4 rounded-lg">
                 Delete
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
@@ -61,13 +54,13 @@
                 </svg>
             </button>
         @else
-            <div class="w-5/12 mt-16 flex space-x-2">
+            <div class="md:w-5/12 mt-16 flex space-x-2">
                 <input type="text" id="last_name"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class=" text-gray-900 text-sm rounded-lg border-none outline-none block w-full p-2.5 "
                     wire:model="username" placeholder="Username" required>
 
                 <button type="submit"
-                    class="active-btn hover:bg-white hover:text-green-600 hover:border hover:border-green-600  py-2 px-4 rounded-sm">Generate</button>
+                    class="bg-white text-main border border-white hover:bg-white hover:text-main hover:border hover:border-main  py-2 px-4 rounded-lg">Generate</button>
             </div>
         @endif
 
@@ -75,8 +68,8 @@
     </form>
 
     @if ($link || $this->getUserInfo())
-        <div class="flex justify-center  mt-32">
-            <div class="flex  p-3 rounded-lg bg-slate-100 justify-between w-4/6">
+        <div class="flex justify-center  mt-24">
+            <div class="flex  p-3 rounded-lg bg-slate-100 justify-between w-4/6 opacity-90">
 
                 <div>{{ $link ?? $this->getUserInfo()->link }}</div>
 

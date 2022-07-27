@@ -13,14 +13,16 @@
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
-<body class="w-5/6 m-auto">
-    
+<body>
+
     @livewire('nav-bar')
-
-    {{ $slot }}
-
+    <x-bubble />
+    <div class="md:w-5/6 m-auto w-11/12">
+        {{ $slot }}
+    </div>
 
     @livewireScripts
     @vite('resources/js/app.js')
+
 
 </html

@@ -1,5 +1,6 @@
-<nav class=" px-2 sm:px-4 py-6 rounded ">
-    <div class="container flex flex-wrap justify-between items-center mx-auto">
+<nav class="md:w-full m-auto w-11/12">
+
+    <div class="flex w-full flex-wrap justify-between items-center mx-auto px-2 sm:px-4 py-6 rounded md:w-5/6 ">
         <a href="https://flowbite.com/" class="flex items-center">
             <span class="self-center text-xl font-extrabold whitespace-nowrap text-white">GTT</span>
         </a>
@@ -28,4 +29,6 @@
             </ul>
         </div>
     </div>
+
+
 </nav>

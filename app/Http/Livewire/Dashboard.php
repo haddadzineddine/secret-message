@@ -31,7 +31,7 @@ class Dashboard extends Component
     public function saveUser()
     {
         $this->validate([
-            // 'image' => 'image|max:1024', // 1MB Max
+            // 'image' => 'nullable|image|max:1024', // 1MB Max
             'username' => 'required|min:3|max:255|unique:users',
         ]);
 
@@ -45,7 +45,7 @@ class Dashboard extends Component
 
         Cookie::queue('username', $user->username);
 
-        return redirect()->to('/');
+        return redirect()->to('dashboard');
     }
 
     public function copyToClipboard()
