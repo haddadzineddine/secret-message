@@ -16,7 +16,7 @@
 
     @livewire('nav-bar')
 
-    <div class="md:w-5/6 m-auto">
+    <div class="md:w-5/6 m-auto w-11/12">
         {{ $slot }}
     </div>
 

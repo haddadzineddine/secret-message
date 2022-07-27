@@ -70,7 +70,7 @@
         <div class="flex justify-center  mt-24">
             <div class="flex  p-3 rounded-lg bg-slate-100 items-center justify-between space-x-8  opacity-90">
 
-                <div class="text-sm">{{ $link ?? $this->getUserInfo()->link }}http://127.0.0.1:8000/dashboard</div>
+                <div class="text-sm">{{ $link ?? $this->getUserInfo()->link }}</div>
 
                 <button wire:click="copyToClipboard" class="flex space-x-4 items-center justify-center text-sm">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
