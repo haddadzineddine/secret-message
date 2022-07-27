@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import "../css/app.css";
 
 window.addEventListener("show-message", (event) => {
     Swal.fire("Here's your message !", event.detail.message, "info");
