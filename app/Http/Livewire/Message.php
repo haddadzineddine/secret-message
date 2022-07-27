@@ -9,8 +9,6 @@ use Livewire\Component;
 
 class Message extends Component
 {
-    use UserInfo;
-
     public $user;
     public $secretMessage;
 
@@ -27,7 +25,7 @@ class Message extends Component
 
         MessageModel::create([
             'message' => $this->secretMessage,
-            'user_id' => $this->getUserInfo()->id,
+            'user_id' => $this->user->id,
         ]);
 
         $this->secretMessage = '';
