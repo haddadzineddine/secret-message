@@ -17,11 +17,11 @@
             <ul
                 class="flex flex-col space-y-4 md:space-y-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
-
                 @foreach ($tabs as $key => $tab)
                     <li>
-                        <button wire:click="selectTab('{{ $key }}')" href="#"
-                            class="text-white hover:opacity-80" aria-current="page">{{ $tab }}</button>
+                        <a href="{{ route($key) }}" class="text-white hover:opacity-80">
+                            {{ $tab }}
+                        </a>
                     </li>
                 @endforeach
 

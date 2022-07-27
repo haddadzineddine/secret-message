@@ -14,8 +14,10 @@
 </head>
 
 <body class="w-5/6 m-auto">
+    
+    @livewire('nav-bar')
 
-    @yield('content')
+    {{ $slot }}
 
 
     @livewireScripts

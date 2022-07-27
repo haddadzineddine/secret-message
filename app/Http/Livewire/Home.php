@@ -6,7 +6,6 @@ use Livewire\Component;
 
 class Home extends Component
 {
-    public $activeTab = 'home';
 
     public function render()
     {
